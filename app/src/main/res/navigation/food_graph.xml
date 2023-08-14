@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/food_graph"
+    app:startDestination="@id/foodListFragment">
+
+    <fragment
+        android:id="@+id/foodListFragment"
+        android:name="com.rickandmorty.foodbook.view.FoodListFragment"
+        android:label="FoodListFragment" >
+        <action
+            android:id="@+id/action_foodListFragment_to_foodDetailFragment"
+            app:destination="@id/foodDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/foodDetailFragment"
+        android:name="com.rickandmorty.foodbook.view.FoodDetailFragment"
+        android:label="FoodDetailFragment" >
+        <action
+            android:id="@+id/action_foodDetailFragment_to_foodListFragment"
+            app:destination="@id/foodListFragment" />
+        <argument
+            android:name="foodId"
+            app:argType="integer"
+            android:defaultValue="0" />
+    </fragment>
+</navigation>
